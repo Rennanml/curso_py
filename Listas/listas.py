@@ -14,5 +14,11 @@ print(lista, "Removido: ", removido)
 lista.insert(0, "Oi!") #Adiciona um termo ao índice indicado
 print(lista)
 
-sortido = lista.sort()
-print(sortido)
+lista_2 = [8, 9, 10]
+
+lista.extend(lista_2) #Concatena lista (também pode ser usado o "+")
+print(lista)
+
+lista_2 = lista.copy() #Copia a lista para outra lista
+print(lista_2)
+
