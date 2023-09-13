@@ -22,3 +22,29 @@ print(lista)
 lista_2 = lista.copy() #Copia a lista para outra lista
 print(lista_2)
 
+# lista_enumerada = list(enumerate(lista))
+# print(lista_enumerada)
+
+#ou 
+
+for indice, nome in enumerate(lista):
+    print(indice, nome)
+
+#Tuples (listas imutáveis)
+
+tupla = ('rennan', 'é', 'Legal')
+print(tupla)
+
+# Funções 
+
+frase = 'Olha só, que interessante!'
+lista_frase = frase.split(',')
+print(lista_frase) 
+
+
+frases_unidas = '-'.join('abc')
+print(frases_unidas)
+frases_unidas_2 = '-'.join(lista_frase)
+print(frases_unidas_2)
+
+
