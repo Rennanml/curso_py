@@ -1,6 +1,7 @@
 import os
 import sys
 import re
+import random
 
 mult1 = 10
 mult2 = 11
@@ -8,9 +9,12 @@ lista_mult = []
 lista_mult2 = []
 aux_soma = 0
 aux_soma2 = 0
+cpf_entrada = ''
 
 try:
-    cpf_entrada = input('Digite os primeiros 9 dígitos de um cpf para que o programa mostre os últimos 2 números: ')
+    print('Gerador de cpf!!')
+    for i in range(9):
+        cpf_entrada += str(random.randint(0, 9))
     cpf_entrada = cpf_entrada.replace('.', '').replace('-', '')
     
     entrada_e_sequencial = cpf_entrada == cpf_entrada * len(cpf_entrada)
@@ -29,7 +33,6 @@ try:
             aux_soma += iter
         digito1 = (aux_soma * 10) % 11
         digito1 = digito1 if digito1 <= 9 else 0
-        print(f'O primeiro dígito do seu cpf é {digito1}!')
         
         #Segundo dígito do cpf
         cpf2 = cpf_int
@@ -42,11 +45,10 @@ try:
             aux_soma2 += iter2
         digito2 = (aux_soma2 * 10) % 11
         digito2 = digito2 if digito2 <= 9 else 0
-        print(f'O segundo dígito do seu cpf é {digito2}!')
         
         print('------------------------------------------')
         print(f'O resultado final do cpf é: {cpf_entrada[:3]}.{cpf_entrada[3:6]}.{cpf_entrada[6:9]}-{str(digito1) + str(digito2)}')
         print('------------------------------------------')    
             
 except ValueError:
-    print('Por favor, digite um CPF válido (XXX.XXX.XXX ou XXXXXXXXX)')
+    ...
